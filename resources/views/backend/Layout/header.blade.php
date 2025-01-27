@@ -1027,12 +1027,12 @@
         </li>
         <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
           <i class="material-symbols-outlined">person</i>
-          <span class="nav-text">Teacher</span>
+          <span class="nav-text">Schedule</span>
         </a>
         <ul aria-expanded="false">
-          <li><a href="teacher.html">Teacher</a></li>
-          <li><a href="teacher-detail.html">Teacher Detail</a></li>
-          <li><a href="add-teacher.html">Add New Teacher</a></li>
+          
+          <li><a href="{{route('schedule.show')}}">Schedule Detail</a></li>
+          <li><a href="{{route('schedules')}}">Add New Schedule</a></li>
           
         </ul>
 

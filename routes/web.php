@@ -7,8 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TrainerController;
 use App\Http\Controllers\ScheduleController;
 
+//Frontend route
 
-Route::get('/home' , [HomeController::class, 'home'])->name('home');
+Route::get('/' , [HomeController::class, 'home'])->name('home');
 Route::get('/about' , [HomeController::class, 'about'])->name('about');
 Route::get('/contact' , [HomeController::class, 'contact'])->name('contact');
 
@@ -24,7 +25,7 @@ Route::get('/testimonial' , [HomeController::class, 'testimonial'])->name('testi
 Route::get('/trainers' , [HomeController::class , 'show'])->name('trainers');
 
 //Contact Route
-Route::post('/contact' , [ContactController::class , 'submit'])->name('contact.submit');
+Route::post('/contact/submit' , [ContactController::class , 'submit'])->name('contact.submit');
 
 // Admin
 
@@ -40,6 +41,19 @@ Route::get('/trainer/{id}/edit', [TrainerController::class, 'edit'])->name('trai
 Route::put('/trainer/{id}', [TrainerController::class, 'update'])->name('trainer.update');
 
 Route::delete('/trainers/{id}', [TrainerController::class, 'destroy'])->name('trainer.destroy');
+
+//Schedule
+
+Route::get('/schedules' , [ScheduleController::class , 'schedules'])->name('schedules');
+Route::post('/schedule', [ScheduleController::class, 'store'])->name('schedule.store');
+
+Route::get('/schedule/show', [ScheduleController::class, 'show'])->name('schedule.show');
+Route::get('/schedules/{id}/edit', [ScheduleController::class, 'edit'])->name('schedule.edit');
+Route::put('/schedules/{id}', [ScheduleController::class, 'update'])->name('schedule.update');
+Route::delete('/schedules/{id}', [ScheduleController::class, 'destroy'])->name('schedule.destroy');
+
+
+
 
 
 
